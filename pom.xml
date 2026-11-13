@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.pluralsight</groupId>
-    <artifactId>Car-Dealership-Workshop-4w</artifactId>
+    <artifactId>StarWars-PodRacer-Dealership-Workshop-4w</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
