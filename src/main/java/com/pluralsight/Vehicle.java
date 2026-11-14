@@ -7,15 +7,15 @@ public class Vehicle {
     private int year;
     private String make;
     private String model;
-    private VehicleType vehicleType;
+    private String vehicleType;
     private String color;
     private int odometer;
     private BigDecimal price;
 
-    public Vehicle(String model, int vin, int year, String make, VehicleType vehicleType, String color, int odometer, BigDecimal price) {
-        this.model = model;
+    public Vehicle(int vin, int year, String model, String make, String vehicleType, String color, int odometer, BigDecimal price) {
         this.vin = vin;
         this.year = year;
+        this.model = model;
         this.make = make;
         this.vehicleType = vehicleType;
         this.color = color;
@@ -39,7 +39,7 @@ public class Vehicle {
         return model;
     }
 
-    public VehicleType getVehicleType() {
+    public String getVehicleType() {
         return vehicleType;
     }
 
