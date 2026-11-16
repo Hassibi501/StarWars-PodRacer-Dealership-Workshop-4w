@@ -7,7 +7,7 @@ public class Dealership {
     private final String name;
     private final String address;
     private final String phoneNumber;
-    private ArrayList<Vehicle> vehicleList;
+    private ArrayList<Vehicle> vehicleList = new ArrayList<>();
 
     public Dealership(String name, String address, String phoneNumber) {
         this.name = name;

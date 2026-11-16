@@ -7,17 +7,17 @@ import java.math.BigDecimal;
 
 public class DealershipFIleManager {
     public Dealership getDealership() {
-        Dealership dealership = null;
         String fileName = "inventory.csv";
         String line;
 
        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
+           // First reading and extracting header data from csv file and initializing it to an instance of the Dealership class
+           String[] dealershipParts = bufferedReader.readLine().split("\\|");
+           Dealership dealership = new Dealership(dealershipParts[0], dealershipParts[1], dealershipParts[2]);
+
            while ((line = bufferedReader.readLine()) != null) {
+               // Then extracting data from the rest of the csv file and initializing it to an instance of the Vehicle class
                String[] parts = line.split("\\|");
-
-               dealership = new Dealership(parts[0], parts[1], parts[2]);
-
-               parts =  line.split("//|");
 
                int vin = Integer.parseInt(parts[0]);
                int year = Integer.parseInt(parts[1]);
@@ -32,12 +32,13 @@ public class DealershipFIleManager {
 
                dealership.addVehicle(vehicle);
            }
+           return dealership;
        }
        catch (IOException e) {
-           e.printStackTrace();
+            e.printStackTrace();
        }
 
-        return dealership;
+       return null;
     }
 
     public void saveDealership(Dealership dealership) {
